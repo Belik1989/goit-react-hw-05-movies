@@ -1,6 +1,7 @@
 import { Container } from 'components/SiteHeader/SiteHeader.styled';
 import { Link, useLocation } from 'react-router-dom';
 import { MoviesListBox, MoviesListBoxItem } from './MoviesList.styled';
+import { IMAGE_URL } from 'services/ApiFetch';
 
 export const MoviesList = ({ movies, title }) => {
   const location = useLocation();
@@ -13,7 +14,7 @@ export const MoviesList = ({ movies, title }) => {
           <MoviesListBoxItem key={id}>
             <Link to={`/movies/${id}`} state={{ from: location }}>
               <img
-                src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+                src={`${IMAGE_URL}${poster_path}`}
                 alt={title}
                 width="150"
                 title={title}
